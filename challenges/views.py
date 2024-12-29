@@ -42,7 +42,7 @@ def index(request):
 def monthly_challenges_by_numbers(request,month):
    months=list(monthly_challenges1.keys())
    if month>len(months):
-       return HttpResponseNotFound("Invalid month!")
+       return HttpResponseNotFound("<h1>Invalid month!<h1>")
    redirect_month=months[month-1]
    redirect_path=reverse("month-challenge",args=[redirect_month])
    return HttpResponseRedirect(redirect_path)
